@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -69,7 +68,6 @@ class CustomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool iOS = Platform.isIOS;
 
     final controller = context.watch<NavBarController>();
 
@@ -78,9 +76,7 @@ class CustomNavBar extends StatelessWidget {
       decoration: BoxDecoration(gradient: gradient),
       padding: const EdgeInsets.all(4),
       child: Padding(
-        padding: iOS
-            ? const EdgeInsets.only(bottom: 12.0, top: 4)
-            : const EdgeInsets.all(8),
+        padding: const EdgeInsets.only(bottom: 12.0, top: 4),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: items.asMap().entries.map((entry) {
