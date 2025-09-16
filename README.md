@@ -7,9 +7,10 @@ Just push the icons with their labels and get ready for action.
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/5392a383-52f3-4235-8665-57333ad58c10)
-![image](https://github.com/user-attachments/assets/8b45bb7b-8dae-443f-8653-6442bf62f942)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5392a383-52f3-4235-8665-57333ad58c10" alt="Home Page selected" width="250"/>
+  <img src="https://github.com/user-attachments/assets/8b45bb7b-8dae-443f-8653-6442bf62f942" alt="Profile Page selected" width="250"/>
+</p>
 
 ## Getting Started
 
