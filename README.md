@@ -1,14 +1,14 @@
 # Gradient Indicator Bottom Nav Bar
-> 
+> Want a bottom navigation bar with gradient background? Here is Gradient Indicator Bottom Nav Bar.
 
-Love the material AppBar? Do you want to add more color to the appbar? Here's a GradientAppBar.
+Implement a beatiful bottom navigation bar with selection indicator and grandient background.
 
-It works just like the normal AppBar. Also with actions, back buttons, titles. So it's just your normal AppBar, but with a twist!
+Just push the icons with their labels and get ready for action.
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/7083755/43866104-e9bc98ea-9b64-11e8-9115-b2deec915dbd.png)
-![image](https://user-images.githubusercontent.com/7083755/43866237-4f8e6a5e-9b65-11e8-8adf-2514a9b1e10c.png)
+![image](https://github.com/user-attachments/assets/5392a383-52f3-4235-8665-57333ad58c10)
+![image](https://github.com/user-attachments/assets/8b45bb7b-8dae-443f-8653-6442bf62f942)
 
 
 ## Getting Started
@@ -23,7 +23,27 @@ It works just like the normal AppBar. Also with actions, back buttons, titles. S
 import 'package:gradient_indicator_nav_bar/gradient_indicator_nav_bar.dart'
 ```
 
-3. Replace your Scaffold AppBar with GradientAppBar.
+3. Create de Provider controller:
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => NavBarController(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        home: const Example(),
+      ),
+    );
+  }
+}
+```
+4. Replace your Scaffold AppBar with GradientAppBar.
 ```dart
 
 class Example extends StatefulWidget {
