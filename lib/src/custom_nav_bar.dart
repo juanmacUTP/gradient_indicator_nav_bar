@@ -68,7 +68,6 @@ class CustomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final controller = context.watch<NavBarController>();
 
     return Container(
@@ -94,9 +93,7 @@ class CustomNavBar extends StatelessWidget {
                 children: [
                   Icon(
                     item.icon,
-                    color: isSelected
-                        ? selectedIconColor
-                        : iconColor,
+                    color: isSelected ? selectedIconColor : iconColor,
                     size: isSelected ? iconSize + 5 : iconSize,
                   ),
                   if (item.label != null)
