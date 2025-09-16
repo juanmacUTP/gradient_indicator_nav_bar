@@ -1,3 +1,4 @@
-## 0.0.1
+## [0.0.1] - 16 September 2025
+ 
+ - First stable version
 
-* TODO: Describe initial release.
