@@ -1,7 +1,9 @@
-import 'package:example/pages/home_page.dart';
-import 'package:example/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_indicator_nav_bar/gradient_indicator_nav_bar.dart';
+import 'package:provider/provider.dart';
+
+import '/pages/home_page.dart';
+import '/pages/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    return ChangeNotifierProvider(
+      create: (context) => NavBarController(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        home: const Example(),
       ),
-      home: const Example(),
     );
   }
 }
@@ -32,23 +37,24 @@ class Example extends StatefulWidget {
 class _ExampleState extends State<Example> {
   int index = 0;
 
-  List<Widget> pages = [
-    HomePage(),
-    ProfilePage()
-  ];
+  List<Widget> pages = [HomePage(), ProfilePage()];
 
   List<NavBarItem> items = [
     NavBarItem(icon: Icons.home, label: 'Home'),
-    NavBarItem(icon: Icons.person, label: 'Profile')
+    NavBarItem(icon: Icons.person, label: 'Profile'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: CustomNavBar(items: [], onChanged: (value){
-        _onChanged(value);
-      },),
+      bottomNavigationBar: CustomNavBar(
+        height: 90,
+        items: items,
+        onChanged: (value) {
+          _onChanged(value);
+        },
+      ),
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 1200),
         child: pages[index],
