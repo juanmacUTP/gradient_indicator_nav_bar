@@ -1,6 +1,6 @@
 name: gradient_indicator_nav_bar
 description: "custom gradient bottom navigation bar with indicator"
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/juanmacUTP/gradient_indicator_nav_bar
 
 environment:

@@ -9,7 +9,7 @@ class ProfilePage extends StatelessWidget{
       return Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: Text('Hola Mundo')
+          child: Text('Profile Page')
         )
       );
     }
