@@ -50,7 +50,7 @@ Just provide the icons with their labels and you’re ready to go. 🚀
     }
     ```
 
-4. Replace your `Scaffold` AppBar with `GradientAppBar`:
+4. Add the CustomNavBar in your `Scaffold` in the  `bottomNavigationBar` item:
 
     ```dart
     class Example extends StatefulWidget {
