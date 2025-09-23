@@ -46,7 +46,9 @@ class _ExampleState extends State<Example> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: CustomNavBar(items: [], onChanged: (value){
+      bottomNavigationBar: CustomNavBar(
+        indicatorBorderRadius: BorderRadius.circular(8),
+        items: items, onChanged: (value){
         _onChanged(value);
       },),
       body: AnimatedSwitcher(

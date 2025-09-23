@@ -34,6 +34,12 @@ class CustomNavBar extends StatelessWidget {
   /// The height of the selection indicator. Defaults to `4.0`.
   final double indicatorHeight;
 
+  /// The width of the selection indicator. Defaults to `48.0`.
+  final double indicatorWidth;
+
+  /// The border radius of the selection indicator. defaults to null.
+  final BorderRadiusGeometry? indicatorBorderRadius;
+
   /// The color of the indicator.
   /// Defaults to `Colors.white` if null.
   final Color? indicatorColor;
@@ -60,6 +66,7 @@ class CustomNavBar extends StatelessWidget {
   ///
   const CustomNavBar({super.key,
     required this.items,
+    this.textStyle,
     this.onChanged,
     this.gradient,
     this.height = 60.0,
@@ -67,8 +74,9 @@ class CustomNavBar extends StatelessWidget {
     this.selectedIconColor = Colors.grey,
     this.iconSize = 30,
     this.indicatorHeight = 4.0,
+    this.indicatorWidth = 48.0,
     this.indicatorColor = Colors.white,
-    this.textStyle
+    this.indicatorBorderRadius,
   });
 
 
@@ -117,10 +125,13 @@ class CustomNavBar extends StatelessWidget {
                   ),
                   if (isSelected)
                     Container(
+                      decoration: BoxDecoration(
+                        color: indicatorColor,
+                        borderRadius: indicatorBorderRadius
+                      ),
                       margin: const EdgeInsets.only(top: 2),
                       height: indicatorHeight,
-                      width: 48,
-                      color: indicatorColor,
+                      width: indicatorWidth,
                     )
                 ],
               ),
