@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget{
       return Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: Text('Hola Mundo')
+          child: Text('Home Page')
         )
       );
     }

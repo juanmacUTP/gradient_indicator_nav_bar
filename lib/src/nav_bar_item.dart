@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-class NavBarItem{
+class NavBarItem {
   IconData icon;
   String? label;
 
   NavBarItem({required this.icon, required this.label});
-
 }

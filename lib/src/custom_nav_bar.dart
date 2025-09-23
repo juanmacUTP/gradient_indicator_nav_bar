@@ -5,9 +5,7 @@ import 'package:provider/provider.dart';
 import 'nav_bar_item.dart';
 import 'nav_bar_controller.dart';
 
-
 class CustomNavBar extends StatelessWidget {
-
   /// The navigation items to display. Must not be null and must contain at least two items.
   final List<NavBarItem> items;
 
@@ -19,7 +17,7 @@ class CustomNavBar extends StatelessWidget {
   /// Defaults to a [LinearGradient] with blue and green if null.
   final Gradient? gradient;
 
-  /// The height of the navigation bar. Defaults to `60.0`.
+  /// The height of the navigation bar. Defaults to `80.0`.
   final double height;
 
   /// The color of the icon. Defaults to 'Colors.white',
@@ -44,11 +42,14 @@ class CustomNavBar extends StatelessWidget {
   /// Defaults to `Colors.white` if null.
   final Color? indicatorColor;
 
-  /// The text style of the item labels.
+  /// The text style builder of the item labels.
   ///
-  /// Defaults to `TextStyle(color: Colors.white)` if null.
-  final TextStyle? textStyle;
-
+  /// Allows customizing the text style dynamically based on the `isSelected` state
+  /// through a `TextStyle Function(bool isSelected)`.
+  ///
+  /// Defaults to `TextStyle(color: Colors.white)` if `isSelected` is `true`
+  /// and `TextStyle(color: Colors.grey)` if `isSelected` is `false`, when null.
+  final TextStyle Function(bool isSelected)? textStyleBuilder;
 
   /// Creates a gradient bottom navigation bar with indicator support.
   ///
@@ -64,21 +65,21 @@ class CustomNavBar extends StatelessWidget {
   ///
   /// Typically used in the [Scaffold.bottomNavigationBar] property.
   ///
-  const CustomNavBar({super.key,
+  const CustomNavBar({
+    super.key,
     required this.items,
-    this.textStyle,
+    this.textStyleBuilder,
     this.onChanged,
-    this.gradient,
-    this.height = 60.0,
-    this.iconColor = Colors.white,
-    this.selectedIconColor = Colors.grey,
+    this.gradient = const LinearGradient(colors: [Colors.blue, Colors.green]),
+    this.height = 80.0,
+    this.iconColor = Colors.grey,
+    this.selectedIconColor = Colors.white,
     this.iconSize = 30,
     this.indicatorHeight = 4.0,
     this.indicatorWidth = 48.0,
     this.indicatorColor = Colors.white,
     this.indicatorBorderRadius,
   });
-
 
   @override
   Widget build(BuildContext context) {
@@ -88,13 +89,13 @@ class CustomNavBar extends StatelessWidget {
 
     return Container(
       height: height,
-      decoration: BoxDecoration(
-        gradient: gradient,
-      ),
+      decoration: BoxDecoration(gradient: gradient),
       padding: const EdgeInsets.all(4),
       child: Padding(
-        padding: iOS ? const EdgeInsets.only(bottom: 12.0, top: 4) : const EdgeInsets.all(8),
-          child: Row(
+        padding: iOS
+            ? const EdgeInsets.only(bottom: 12.0, top: 4)
+            : const EdgeInsets.all(8),
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: items.asMap().entries.map((entry) {
             final index = entry.key;
@@ -111,28 +112,29 @@ class CustomNavBar extends StatelessWidget {
                 children: [
                   Icon(
                     item.icon,
-                    color: isSelected ? selectedIconColor.withAlpha(90) : iconColor,
+                    color: isSelected ? selectedIconColor : iconColor,
                     size: iconSize,
                   ),
-                  if(item.label != null)
-                  Text(
-                    item.label ?? '',
-                    style: textStyle ??
-                      const TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-                  ),
+                  if (item.label != null)
+                    Text(
+                      item.label ?? '',
+                      style:
+                          textStyleBuilder?.call(isSelected) ??
+                          TextStyle(
+                            color: isSelected ? Colors.white : Colors.grey,
+                            fontSize: 12,
+                          ),
+                    ),
                   if (isSelected)
                     Container(
                       decoration: BoxDecoration(
                         color: indicatorColor,
-                        borderRadius: indicatorBorderRadius
+                        borderRadius: indicatorBorderRadius,
                       ),
                       margin: const EdgeInsets.only(top: 2),
                       height: indicatorHeight,
                       width: indicatorWidth,
-                    )
+                    ),
                 ],
               ),
             );

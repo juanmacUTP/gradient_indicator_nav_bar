@@ -33,9 +33,12 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  animate_do: ^4.2.0
   cupertino_icons: ^1.0.8
   gradient_indicator_nav_bar:
     path: ../../gradient_indicator_nav_bar
+  provider: ^6.1.5+1
+
 
 dev_dependencies:
   flutter_test:
