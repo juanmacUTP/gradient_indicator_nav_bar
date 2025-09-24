@@ -4,17 +4,17 @@
 
 
 ## [0.0.5] - 16 September 2025
-- Added indicator border radius
-- Added text style builder
-- Added indicator width
+- Added `indicatorBorderRadius` parameter to the nav bar constructor.
+- Added `textStyleBuilder` parameter to the nav bar constructor.
+- Added `indicatorWidth` parameter to the nav bar constructor.
 
 
 ## [0.0.4] - 16 September 2025
-- fix the readme file
+- fix the readme file.
 
 
 ## [0.0.3] - 16 September 2025
- - Dart format to the custom_nav_bar file
+ - Dart format to the custom_nav_bar file.
 
 
 ## [0.0.2] - 16 September 2025
