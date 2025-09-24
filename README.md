@@ -98,6 +98,3 @@ Just provide the icons with their labels and you’re ready to go. 🚀
       }
     }
     ```
-
-```
-

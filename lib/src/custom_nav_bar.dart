@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -51,6 +50,11 @@ class CustomNavBar extends StatelessWidget {
   /// and `TextStyle(color: Colors.grey)` if `isSelected` is `false`, when null.
   final TextStyle Function(bool isSelected)? textStyleBuilder;
 
+  /// The padding applied to the row to add spacing from the bottom edge.
+  ///
+  /// Defaults to `EdgeInsets.only(bottom: 8.0, top: 4.0)` if not provided.
+  final EdgeInsetsGeometry rowPadding;
+
   /// Creates a gradient bottom navigation bar with indicator support.
   ///
   /// The argument [items] must not be null and must have at least two items.
@@ -79,12 +83,11 @@ class CustomNavBar extends StatelessWidget {
     this.indicatorWidth = 48.0,
     this.indicatorColor = Colors.white,
     this.indicatorBorderRadius,
+    this.rowPadding = const EdgeInsets.only(bottom: 8.0, top: 4.0),
   });
 
   @override
   Widget build(BuildContext context) {
-    bool iOS = Platform.isIOS;
-
     final controller = context.watch<NavBarController>();
 
     return Container(
@@ -92,9 +95,7 @@ class CustomNavBar extends StatelessWidget {
       decoration: BoxDecoration(gradient: gradient),
       padding: const EdgeInsets.all(4),
       child: Padding(
-        padding: iOS
-            ? const EdgeInsets.only(bottom: 12.0, top: 4)
-            : const EdgeInsets.all(8),
+        padding: rowPadding,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: items.asMap().entries.map((entry) {

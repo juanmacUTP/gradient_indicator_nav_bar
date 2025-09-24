@@ -1,3 +1,8 @@
+## [0.0.6] - 24 September 2025
+ - Fixed wasm support
+- Added `rowPadding` parameter to the nav bar constructor.
+
+
 ## [0.0.5] - 16 September 2025
 - Added indicator border radius
 - Added text style builder
