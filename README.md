@@ -101,3 +101,9 @@ Just provide the icons with their labels and you’re ready to go. 🚀
 
 ```
 
+🚧 In Progress
+
+New features are currently being developed to enhance the project’s functionality.
+
+Upcoming updates:
+  - An animation will be implemented to enhance the user experience when switching between items.
