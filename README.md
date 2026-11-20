@@ -98,3 +98,15 @@ Just provide the icons with their labels and you’re ready to go. 🚀
       }
     }
     ```
+<<<<<<< HEAD
+=======
+
+```
+
+🚧 In Progress
+
+New features are currently being developed to enhance the project’s functionality.
+
+Upcoming updates:
+  - An animation will be implemented to enhance the user experience when switching between items.
+>>>>>>> 70b97bd89378f37076c4e1b1015b220d113e6fe3
