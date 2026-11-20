@@ -1,3 +1,8 @@
+## [0.0.7] - 20 November 2026
+- Migrated to standalone `material_ui` package.
+- Adopted Dart type/constructor shorthands.
+- Updated Flutter and Dart SDK constraints.
+
 ## [0.0.6] - 24 September 2025
  - Fixed wasm support
 - Added `rowPadding` parameter to the nav bar constructor.

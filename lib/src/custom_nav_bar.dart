@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
 
 import 'nav_bar_item.dart';
@@ -83,7 +83,7 @@ class CustomNavBar extends StatelessWidget {
     this.indicatorWidth = 48.0,
     this.indicatorColor = Colors.white,
     this.indicatorBorderRadius,
-    this.rowPadding = const EdgeInsets.only(bottom: 8.0, top: 4.0),
+    this.rowPadding = const .only(bottom: 8.0, top: 4.0),
   });
 
   @override
@@ -93,11 +93,11 @@ class CustomNavBar extends StatelessWidget {
     return Container(
       height: height,
       decoration: BoxDecoration(gradient: gradient),
-      padding: const EdgeInsets.all(4),
+      padding: const .all(4),
       child: Padding(
         padding: rowPadding,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: .spaceAround,
           children: items.asMap().entries.map((entry) {
             final index = entry.key;
             final item = entry.value;
@@ -109,7 +109,7 @@ class CustomNavBar extends StatelessWidget {
                 onChanged?.call(index);
               },
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: .min,
                 children: [
                   Icon(
                     item.icon,
@@ -132,7 +132,7 @@ class CustomNavBar extends StatelessWidget {
                         color: indicatorColor,
                         borderRadius: indicatorBorderRadius,
                       ),
-                      margin: const EdgeInsets.only(top: 2),
+                      margin: const .only(top: 2),
                       height: indicatorHeight,
                       width: indicatorWidth,
                     ),

@@ -1,15 +1,15 @@
 name: gradient_indicator_nav_bar
 description: "custom gradient bottom navigation bar with indicator"
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/juanmacUTP/gradient_indicator_nav_bar
 
 environment:
-  sdk: ^3.9.0
-  flutter: ">=1.17.0"
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.11.1
   provider: ^6.1.5+1
 
 dev_dependencies:

@@ -1,8 +1,9 @@
-import 'package:example/pages/home_page.dart';
-import 'package:example/pages/profile_page.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:gradient_indicator_nav_bar/gradient_indicator_nav_bar.dart';
 import 'package:provider/provider.dart';
+
+import '/pages/home_page.dart';
+import '/pages/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: .fromSeed(seedColor: Colors.deepPurple),
         ),
         home: const Example(),
       ),
@@ -48,7 +49,7 @@ class _ExampleState extends State<Example> {
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: CustomNavBar(
-        indicatorBorderRadius: BorderRadius.circular(8),
+        indicatorBorderRadius: .circular(8),
         items: items,
         onChanged: (value) {
           _onChanged(value);
@@ -57,7 +58,7 @@ class _ExampleState extends State<Example> {
           return TextStyle(
             color: isSelected? Colors.white : Colors.grey,
             fontSize: 12,
-            fontWeight: isSelected? FontWeight.bold : null,
+            fontWeight: isSelected? .w700 : null,
           );
         },
       ),
